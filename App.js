@@ -1,38 +1,40 @@
-import * as React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import Constants from 'expo-constants';
+import React from 'react';
+import {Text, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import CustomImage from './src/components/screens/CustomImage'
+import regigigas from './assets/486.png';
+import Styles from "./src/Styles";
+import {StatusBar} from "expo-status-bar";
 
-// You can import from local files
-import AssetExample from './components/AssetExample';
-
-// or any pure javascript modules available in npm
-import {Card} from 'react-native-paper';
+const heatran = require('./assets/485.png');
+const giratina = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/487.png";
+const hydration = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/489.svg";
 
 export default function App() {
-  return (
-      <View style={styles.container}>
-        <Text style={styles.paragraph}>
-          Change code in the editor and watch it change on your phone! Save to get a shareable url.
-        </Text>
-        <Card>
-          <AssetExample/>
-        </Card>
-      </View>
-  );
+    return (
+        <SafeAreaView>
+            <StatusBar style={Styles.statusBar}/>
+            <View>
+                <Text style={Styles.tituloView}>
+                    Três formas de inserir imagens
+                </Text>
+                <CustomImage fromWeb={false} image={heatran}
+                             title={"Imagem local do Pokémon Heatran com require"}
+                             width={220}
+                             height={170}/>
+                <CustomImage fromWeb={false} image={regigigas}
+                             title={"Imagem local do Pokémon Regigigas com import"}
+                             width={220}
+                             height={170}/>
+                <CustomImage fromWeb={true} image={giratina}
+                             title={"Imagem local do Pokémon Giratina com uri"}
+                             width={220}
+                             height={170}/>
+                <CustomImage fromWeb={true} image={hydration}
+                             title={"Imagem local do Pokémon Hydration com uri de imagem em svg"}
+                             width={220}
+                             height={170}/>
+            </View>
+        </SafeAreaView>
+    );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
-    padding: 8,
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-});
