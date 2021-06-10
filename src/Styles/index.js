@@ -11,8 +11,9 @@ const Styles = StyleSheet.create({
         padding: 8,
     },
     tituloView: {
-        fontSize: 18,
+        fontSize: 24,
         fontWeight: 'bold',
+        paddingTop: 8,
         textAlign: 'center'
     },
     paragraph: {
@@ -23,6 +24,11 @@ const Styles = StyleSheet.create({
     },
     statusBar: {
         backgroundColor: '#AD6200'
+    },
+    scrollView: {
+        backgroundColor: '#FFEEEE',
+        marginHorizontal: 8,
+        borderRadius: 16
     }
 })
 export default Styles;

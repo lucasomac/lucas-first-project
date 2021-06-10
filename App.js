@@ -1,8 +1,9 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {ScrollView, Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import CustomImage from './src/components/screens/CustomImage'
 import regigigas from './assets/486.png';
+import basculin from './assets/550.svg';
 import Styles from "./src/Styles";
 import {StatusBar} from "expo-status-bar";
 
@@ -14,27 +15,31 @@ export default function App() {
     return (
         <SafeAreaView>
             <StatusBar style={Styles.statusBar}/>
-            <View>
+            <ScrollView style={Styles.scrollView}>
                 <Text style={Styles.tituloView}>
                     Três formas de inserir imagens
                 </Text>
-                <CustomImage fromWeb={false} image={heatran}
+                <CustomImage fromWeb={false} isSvg={false} image={heatran}
                              title={"Imagem local do Pokémon Heatran com require"}
                              width={220}
                              height={170}/>
-                <CustomImage fromWeb={false} image={regigigas}
+                <CustomImage fromWeb={false} isSvg={false} image={regigigas}
                              title={"Imagem local do Pokémon Regigigas com import"}
                              width={220}
                              height={170}/>
-                <CustomImage fromWeb={true} image={giratina}
-                             title={"Imagem local do Pokémon Giratina com uri"}
+                <CustomImage fromWeb={true} isSvg={false} image={giratina}
+                             title={"Imagem do Pokémon Giratina com uri"}
                              width={220}
                              height={170}/>
-                <CustomImage fromWeb={true} image={hydration}
-                             title={"Imagem local do Pokémon Hydration com uri de imagem em svg"}
+                <CustomImage fromWeb={false} isSvg={true} image={basculin}
+                             title={"Imagem local do Pokémon Hydration em svg"}
                              width={220}
                              height={170}/>
-            </View>
+                <CustomImage fromWeb={true} isSvg={true} image={hydration}
+                             title={"Imagem do Pokémon Hydration com uri em svg"}
+                             width={220}
+                             height={170}/>
+            </ScrollView>
         </SafeAreaView>
     );
 }
