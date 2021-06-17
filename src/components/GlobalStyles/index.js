@@ -1,7 +1,7 @@
 import Constants from "expo-constants";
 import {StyleSheet} from "react-native";
 
-const Styles = StyleSheet.create({
+const GlobalStyles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
@@ -27,8 +27,10 @@ const Styles = StyleSheet.create({
     },
     scrollView: {
         backgroundColor: '#FFEEEE',
+        paddingTop: 8,
+        paddingBottom: 8,
         marginHorizontal: 8,
         borderRadius: 16
     }
 })
-export default Styles;
+export default GlobalStyles;
