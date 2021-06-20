@@ -19,44 +19,44 @@ export default function Imc() {
     }
 
     function handleSubmit() {
-        const alt = parseFloat(altura) / 100;
-        const imc = parseFloat(peso) / (alt * alt)
+        const alt = altura / 100;
+        const imc = peso / (alt * alt)
+        let message = "";
 
         if (imc <= 0 || alt <= 0 || peso <= 0) {
-            Speech.speak('Dados Incorretos!' + 'Por favor, informe os campos. Exemplo: Peso 40(Kg, Altura 150 (cm)', {language: 'pt-BR'});
+            Speech.speak('Dados Incorretos!', {language: 'pt-BR'});
+            // Speech.speak('Dados Incorretos! Por favor, informe os campos. Exemplo: Peso 40(Kg, Altura 150 (cm)', {language: 'pt-BR'});
             Alert.alert('Dados Incorretos!' + 'Por favor, informe os campos. Exemplo: Peso 40(Kg, Altura 150 (cm)');
-        } else {
-            var message = '';
-            if (imc < 17) {
-                message = 'Voccẽ está MUITO ABAIXO do peso!';
-                messageImcSpeech(imc, message);
-                messageImcAlert(imc, message);
-            } else if (imc >= 17 && imc < 18.5) {
-                message = 'Voccẽ está ABAIXO do peso!';
-                messageImcSpeech(imc, message);
-                messageImcAlert(imc, message);
-            } else if (imc >= 18.5 && imc < 25) {
-                message = 'Voccẽ está com peso NORMAL!';
-                messageImcSpeech(imc, message);
-                messageImcAlert(imc, message);
-            } else if (imc >= 25 && imc < 30) {
-                message = 'Voccẽ está com SOBREPESO!';
-                messageImcSpeech(imc, message);
-                messageImcAlert(imc, message);
-            } else if (imc >= 30 && imc < 35) {
-                message = 'Voccẽ está OBESO (Ou seja, obesidade grau I!';
-                messageImcSpeech(imc, message);
-                messageImcAlert(imc, message);
-            } else if (imc >= 35 && imc < 40) {
-                message = 'Voccẽ está com OBESIDADE SEVERA (Ou seja, obesidade grau II!';
-                messageImcSpeech(imc, message);
-                messageImcAlert(imc, message);
-            } else if (imc >= 40) {
-                message = 'Voccẽ está com OBESIDADE MÓRBIDA (Ou seja, obesidade grau III!';
-                messageImcSpeech(imc, message);
-                messageImcAlert(imc, message);
-            }
+        } else if (imc < 17) {
+            message = 'Voccẽ está MUITO ABAIXO do peso!';
+            messageImcSpeech(imc, message);
+            messageImcAlert(imc, message);
+        } else if (imc >= 17 && imc < 18.5) {
+            message = 'Voccẽ está ABAIXO do peso!';
+            messageImcSpeech(imc, message);
+            messageImcAlert(imc, message);
+        } else if (imc >= 18.5 && imc < 25) {
+            message = 'Voccẽ está com peso NORMAL!';
+            messageImcSpeech(imc, message);
+            messageImcAlert(imc, message);
+        } else if (imc >= 25 && imc < 30) {
+            message = 'Voccẽ está com SOBREPESO!';
+            messageImcSpeech(imc, message);
+            messageImcAlert(imc, message);
+        } else if (imc >= 30 && imc < 35) {
+            message = 'Voccẽ está OBESO (Ou seja, obesidade grau I!';
+            messageImcSpeech(imc, message);
+            messageImcAlert(imc, message);
+        } else if (imc >= 35 && imc < 40) {
+            message = 'Voccẽ está com OBESIDADE SEVERA (Ou seja, obesidade grau II!';
+            messageImcSpeech(imc, message);
+            messageImcAlert(imc, message);
+        } else if (imc >= 40) {
+            message = 'Voccẽ está com OBESIDADE MÓRBIDA (Ou seja, obesidade grau III!';
+            messageImcSpeech(imc, message);
+            messageImcAlert(imc, message);
         }
+        handleClear()
     }
 
     function handleClear() {
