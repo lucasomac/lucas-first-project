@@ -2,14 +2,11 @@ import {StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
     tituloImage: {
-        paddingTop: 8,
-        paddingBottom: 8,
-        fontSize: 18,
+        paddingTop: 10,
+        fontSize: 30,
         fontWeight: 'bold',
-        textAlign: 'center'
-    },
-    svgImage: {
-        alignItems: 'center'
+        textAlign: 'center',
+        color: '#8D4600'
     }
 })
 

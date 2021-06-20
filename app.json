@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "lucas-first-project",
-    "slug": "snack-e2b00951-30bf-42e0-a56b-28db602d9fa4",
+    "name": "IMC Calculator",
+    "slug": "imc-calculator",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FFC300"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -17,13 +17,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "br.com.lucolimac.imccalculator",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#FFC300"
+      },
+      "package": "br.com.lucolimac.imccalculator",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
